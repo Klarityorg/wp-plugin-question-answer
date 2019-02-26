@@ -4,37 +4,37 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-function question_awnser_block_assets() {
+function question_answer_block_assets() {
     wp_enqueue_style(
-        'question_awnser_block-cgb-style-css',
+        'question_answer_block-cgb-style-css',
         plugins_url('dist/blocks.style.build.css', __DIR__),
         ['wp-editor'],
         filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' )
     );
 }
 
-add_action('enqueue_block_assets', 'question_awnser_block_assets');
+add_action('enqueue_block_assets', 'question_answer_block_assets');
 
-function question_awnser_block_editor_assets() {
+function question_answer_block_editor_assets() {
     wp_enqueue_script(
-        'question_awnser_block-js',
+        'question_answer_block-js',
         plugins_url('/dist/blocks.build.js', __DIR__),
         ['wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor'],
       filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' )
     );
 
     wp_enqueue_style(
-        'question_awnser_block-editor-css', // Handle.
+        'question_answer_block-editor-css', // Handle.
         plugins_url('dist/blocks.editor.build.css', __DIR__),
         ['wp-edit-blocks'],
         filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' )
     );
 }
 
-add_action('enqueue_block_editor_assets', 'question_awnser_block_editor_assets');
+add_action('enqueue_block_editor_assets', 'question_answer_block_editor_assets');
 
 register_block_type('klarity/klarity-question-answer-block', [
-    'render_callback' => 'render_question_awnser',
+    'render_callback' => 'render_question_answer',
     'attributes' => [
         'question' => [
             'type' => 'string',
@@ -48,7 +48,7 @@ register_block_type('klarity/klarity-question-answer-block', [
 ]);
 
 
-function render_question_awnser( $attributes ) {
+function render_question_answer( $attributes ) {
     $question = $attributes['question'] ?? '';
     $answer = $attributes['answer'] ?? '';
     wp_enqueue_script(
@@ -59,7 +59,7 @@ function render_question_awnser( $attributes ) {
     );
 	return (
 		'<div>
-      <div class="question-answer-container text-left card" onclick="toggleExpandAwnser(this)">
+      <div class="question-answer-container text-left card" onclick="toggleExpandAnswer(this)">
         <div class="question-container">
           <p>'. $question .'</p>
           <div class="chevron-container chevron-down">

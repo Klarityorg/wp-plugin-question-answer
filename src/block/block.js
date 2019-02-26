@@ -38,8 +38,8 @@ registerBlockType('klarity/klarity-question-answer-block', {
 				<p>Answer section</p>
 			<div class="text-input">
 				<RichText
-					id="awnserBlock"
-					placeholder="Awnser"
+					id="answerBlock"
+					placeholder="Answer"
 					value={ attributes.answer }
 		    	onChange={ content => setAttributes({ answer: content }) } />
 			</div>
