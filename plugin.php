@@ -5,7 +5,7 @@
  * Description: Klarity question answer block
  * Author: Klarity
  * Author URI: https://github.com/Klarityorg
- * Version: 1.0.4
+ * Version: 1.0.5
  * License: MIT
  *
  * @package Klarity
