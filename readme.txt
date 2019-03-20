@@ -4,7 +4,7 @@ Tags: question, answer, faq, block, gutenberg
 Requires at least: 5.0.0
 Tested up to: 5.1.0
 Requires PHP: 7.2.0
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: MIT
 License URI: https://opensource.org/licenses/MIT
 
@@ -27,6 +27,8 @@ Q: Is this totally free?
 A: Yes
 
 == Changelog ==
+= 1.1.1
+* Fixed chevron bug
 = 1.0 =
 * Initial release
 
