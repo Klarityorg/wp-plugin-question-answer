@@ -55,7 +55,7 @@ function render_question_answer( $attributes ) {
         'question-answer-block-handler-js',
         plugins_url('/src/block/toggle-expand-answer.js', __DIR__),
         [],
-		filemtime(plugins_url('/src/block/toggle-expand-answer.js', __DIR__))
+		filemtime(plugin_dir_path(__DIR__).'/src/block/toggle-expand-answer.js')
     );
 	return (
 		'<div>
