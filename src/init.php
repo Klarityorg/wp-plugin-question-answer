@@ -20,7 +20,7 @@ function question_answer_block_editor_assets() {
         'question_answer_block-js',
         plugins_url('/dist/blocks.build.js', __DIR__),
         ['wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor'],
-      filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' )
+        filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' )
     );
 
     wp_enqueue_style(
@@ -54,8 +54,8 @@ function render_question_answer( $attributes ) {
     wp_enqueue_script(
         'question-answer-block-handler-js',
         plugins_url('/src/block/toggle-expand-answer.js', __DIR__),
-        [], // Dependencies, defined above.
-        true // Enqueue the script in the footer.
+        [],
+		filemtime(plugins_url('/src/block/toggle-expand-answer.js', __DIR__))
     );
 	return (
 		'<div>
